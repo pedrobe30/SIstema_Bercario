@@ -23,6 +23,9 @@ namespace Sistema_Bercario
             InitializeComponent();
             _medicoRepository = new MedicoRepository();
             ConfigurarDataGridView();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Impede redimensionamento
+            this.MaximizeBox = false; // Remove o botão maximizar
+            this.MinimizeBox = true;  // Opcional: deixa o botão minimizar
         }
 
         private void FormMedico_Load(object sender, EventArgs e)

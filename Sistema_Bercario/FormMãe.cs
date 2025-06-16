@@ -23,6 +23,9 @@ namespace Sistema_Bercario
             InitializeComponent();
             _maeRepository = new MaeRepository();
             ConfigurarFormulario();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Impede redimensionamento
+            this.MaximizeBox = false; // Remove o botão maximizar
+            this.MinimizeBox = true;  // Opcional: deixa o botão minimizar
         }
 
         private void FormMãe_Load(object sender, EventArgs e)

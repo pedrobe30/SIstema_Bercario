@@ -7,7 +7,7 @@ public class DatabaseConnection
         "Server=localhost;" +
         "Database=hospital_bercario;" +
         "Uid=root;" +
-        "Pwd=root30;" +
+        "Pwd=root;" +
         "Port=3306;";
 
     public bool TestarConexao()

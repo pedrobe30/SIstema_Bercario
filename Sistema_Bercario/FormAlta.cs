@@ -31,6 +31,9 @@ namespace Sistema_Bercario
             _maeRepository = new MaeRepository();
             _medicoRepository = new MedicoRepository();
             _bebeRepository = new BebeRepository();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Impede redimensionamento
+            this.MaximizeBox = false; // Remove o botão maximizar
+            this.MinimizeBox = true;  // Opcional: deixa o botão minimizar
 
             ConfigurarFormulario();
         }
@@ -84,7 +87,7 @@ namespace Sistema_Bercario
             // Limitar caracteres nos campos
             txtCpfMae.MaxLength = 14;
             txtCodigoBebe.MaxLength = 10;
-            
+
 
             // Eventos de validação
             txtCodigoBebe.KeyPress += TxtNumerico_KeyPress;
@@ -255,6 +258,31 @@ namespace Sistema_Bercario
 
                 if (mae != null)
                 {
+                    // Verificar se já existe um bebê selecionado
+                    if (txtCodigoBebe.Tag != null)
+                    {
+                        var bebeSelecionado = (Bebe)txtCodigoBebe.Tag;
+
+                        // Verificar se o CPF informado é da mãe do bebê selecionado
+                        if (mae.Id != bebeSelecionado.IdMae)
+                        {
+                            txtCpfMae.BackColor = Color.LightCoral;
+                            txtCpfMae.Tag = null;
+                            _toolTip.SetToolTip(txtCpfMae, "");
+
+                            // Buscar a mãe correta do bebê para mostrar na mensagem
+                            var maeCorreta = _maeRepository.BuscarPorId(bebeSelecionado.IdMae);
+                            string cpfCorreto = maeCorreta?.Cpf ?? "N/A";
+                            string nomeCorreto = maeCorreta?.Nome ?? "N/A";
+
+                            MessageBox.Show($"Este CPF não corresponde à mãe do bebê selecionado.\n\n" +
+                                          $"CPF correto da mãe: {cpfCorreto}\n" +
+                                          $"Nome da mãe: {nomeCorreto}",
+                                "CPF Incompatível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
                     txtCpfMae.BackColor = Color.LightGreen;
                     txtCpfMae.Tag = mae; // Armazenar o objeto mãe
 
@@ -315,6 +343,23 @@ namespace Sistema_Bercario
 
                         // Mostrar o nome do bebê em tooltip
                         _toolTip.SetToolTip(txtCodigoBebe, $"Bebê: {bebe.Nome}");
+
+                        // Limpar e invalidar o campo CPF da mãe para revalidação
+                        if (!string.IsNullOrWhiteSpace(txtCpfMae.Text))
+                        {
+                            // Revalidar o CPF da mãe com o novo bebê selecionado
+                            TxtCpfMae_Leave(txtCpfMae, EventArgs.Empty);
+                        }
+                        else
+                        {
+                            // Se não há CPF informado, sugerir o CPF correto
+                            var maeCorreta = _maeRepository.BuscarPorId(bebe.IdMae);
+                            if (maeCorreta != null)
+                            {
+                                MessageBox.Show($"CPF da mãe deste bebê: {maeCorreta.Cpf}\nNome: {maeCorreta.Nome}",
+                                    "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
                     }
                     else
                     {
@@ -358,7 +403,7 @@ namespace Sistema_Bercario
                     IdMedicoAlta = (int)comboBoxMedico.SelectedValue,
                     DataAlta = dateTimePickerAlta.Value.Date,
                     HoraAlta = dateTimePickerHora.Value.TimeOfDay,
-                    
+
                 };
 
                 bool sucesso = _altaRepository.Inserir(alta);
@@ -494,7 +539,7 @@ namespace Sistema_Bercario
             DateTime horaCompleta = DateTime.Today.Add(alta.HoraAlta);
             dateTimePickerHora.Value = horaCompleta;
 
-           
+
 
             // Carregar código do bebê
             var bebe = _bebeRepository.BuscarPorCodigo(alta.CodigoBebe);
@@ -537,7 +582,7 @@ namespace Sistema_Bercario
         {
             txtCodigoBebe.Clear();
             txtCpfMae.Clear();
-            
+
 
             txtCpfMae.BackColor = SystemColors.Window;
             txtCodigoBebe.BackColor = SystemColors.Window;
@@ -578,6 +623,22 @@ namespace Sistema_Bercario
             {
                 MessageBox.Show("Informe um CPF válido da mãe.",
                     "CPF Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCpfMae.Focus();
+                return false;
+            }
+
+            // VALIDAÇÃO CRÍTICA: Verificar se o CPF da mãe corresponde ao bebê selecionado
+            var bebeSelecionado = (Bebe)txtCodigoBebe.Tag;
+            var maeSelecionada = (Mae)txtCpfMae.Tag;
+
+            if (bebeSelecionado.IdMae != maeSelecionada.Id)
+            {
+                var maeCorreta = _maeRepository.BuscarPorId(bebeSelecionado.IdMae);
+                MessageBox.Show($"O CPF informado não corresponde à mãe do bebê selecionado.\n\n" +
+                              $"Bebê: {bebeSelecionado.Nome} (Código: {bebeSelecionado.Codigo})\n" +
+                              $"Mãe correta: {maeCorreta?.Nome ?? "N/A"}\n" +
+                              $"CPF correto: {maeCorreta?.Cpf ?? "N/A"}",
+                    "CPF Incompatível", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCpfMae.Focus();
                 return false;
             }

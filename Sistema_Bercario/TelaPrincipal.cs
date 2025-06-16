@@ -18,6 +18,10 @@ namespace Sistema_Bercario
         {
             InitializeComponent();
             this.adminLogado = adminLogado;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Impede redimensionamento
+            this.MaximizeBox = false; // Remove o botão maximizar
+            this.MinimizeBox = true;  // Opcional: deixa o botão minimizar
+
         }
 
         // Navegação para FormMedico

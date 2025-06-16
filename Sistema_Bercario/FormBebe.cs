@@ -30,6 +30,9 @@ namespace Sistema_Bercario
             _bebeRepository = new BebeRepository();
             _maeRepository = new MaeRepository();
             _medicoRepository = new MedicoRepository();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Impede redimensionamento
+            this.MaximizeBox = false; // Remove o botão maximizar
+            this.MinimizeBox = true;  // Opcional: deixa o botão minimizar
 
             ConfigurarFormulario();
         }
@@ -133,7 +136,7 @@ namespace Sistema_Bercario
             dtgListBebe.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "PesoNascimento",
-                HeaderText = "Peso (g)",
+                HeaderText = "Peso (Kg)",
                 DataPropertyName = "PesoNascimento",
                 Width = 80,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "N0" }

@@ -26,7 +26,8 @@ namespace Sistema_Bercario.RespositorioDao
             {
                 string sql = @"SELECT ah.*, 
                           b.nome AS nome_bebe, 
-                          m.nome AS nome_mae, 
+                          m.nome AS nome_mae,
+                          m.cpf AS cpf_mae,
                           med.nome AS nome_medico
                           FROM altas_hospitalares ah
                           INNER JOIN bebes b ON ah.codigo_bebe = b.codigo_bebe
@@ -49,7 +50,10 @@ namespace Sistema_Bercario.RespositorioDao
                         Observacoes = row["observacoes"].ToString(),
                         DataRegistro = Convert.ToDateTime(row["data_registro"]),
                         Bebe = new Bebe { Nome = row["nome_bebe"].ToString() },
-                        Mae = new Mae { Nome = row["nome_mae"].ToString() },
+                        Mae = new Mae { 
+                            Nome = row["nome_mae"].ToString(),
+                            Cpf = row["cpf_mae"].ToString() 
+                        },
                         MedicoAlta = new Medico { Nome = row["nome_medico"].ToString() }
                     });
                 }
@@ -68,7 +72,8 @@ namespace Sistema_Bercario.RespositorioDao
             {
                 string sql = @"SELECT ah.*, 
                           b.nome AS nome_bebe, 
-                          m.nome AS nome_mae, 
+                          m.nome AS nome_mae,
+                          m.cpf AS cpf_mae,
                           med.nome AS nome_medico
                           FROM altas_hospitalares ah
                           INNER JOIN bebes b ON ah.codigo_bebe = b.codigo_bebe
@@ -93,7 +98,10 @@ namespace Sistema_Bercario.RespositorioDao
                         Observacoes = row["observacoes"].ToString(),
                         DataRegistro = Convert.ToDateTime(row["data_registro"]),
                         Bebe = new Bebe { Nome = row["nome_bebe"].ToString() },
-                        Mae = new Mae { Nome = row["nome_mae"].ToString() },
+                        Mae = new Mae { 
+                            Nome = row["nome_mae"].ToString(),
+                            Cpf = row["cpf_mae"].ToString() 
+                        },
                         MedicoAlta = new Medico { Nome = row["nome_medico"].ToString() }
                     };
                 }
@@ -153,7 +161,8 @@ namespace Sistema_Bercario.RespositorioDao
             {
                 string sql = @"SELECT ah.*, 
                           b.nome AS nome_bebe, 
-                          m.nome AS nome_mae, 
+                          m.nome AS nome_mae,
+                          m.cpf AS cpf_mae,
                           med.nome AS nome_medico
                           FROM altas_hospitalares ah
                           INNER JOIN bebes b ON ah.codigo_bebe = b.codigo_bebe
@@ -179,7 +188,10 @@ namespace Sistema_Bercario.RespositorioDao
                         Observacoes = row["observacoes"].ToString(),
                         DataRegistro = Convert.ToDateTime(row["data_registro"]),
                         Bebe = new Bebe { Nome = row["nome_bebe"].ToString() },
-                        Mae = new Mae { Nome = row["nome_mae"].ToString() },
+                        Mae = new Mae { 
+                            Nome = row["nome_mae"].ToString(),
+                            Cpf = row["cpf_mae"].ToString() 
+                        },
                         MedicoAlta = new Medico { Nome = row["nome_medico"].ToString() }
                     });
                 }
@@ -192,6 +204,4 @@ namespace Sistema_Bercario.RespositorioDao
             return altas;
         }
     }
-
-
 }

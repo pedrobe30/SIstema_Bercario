@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnEnfermeirasNavegation = new Button();
+            btnMaeNavegation = new Button();
+            btnBebesNavegation = new Button();
             panel1 = new Panel();
-            button5 = new Button();
-            button2 = new Button();
+            btnaltaNavegation = new Button();
+            btnMedicosNavegation = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -62,71 +62,74 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnEnfermeirasNavegation
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(19, 204);
-            button1.Name = "button1";
-            button1.Size = new Size(331, 38);
-            button1.TabIndex = 1;
-            button1.Text = "Enfermeiras";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnEnfermeirasNavegation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEnfermeirasNavegation.Location = new Point(19, 204);
+            btnEnfermeirasNavegation.Name = "btnEnfermeirasNavegation";
+            btnEnfermeirasNavegation.Size = new Size(331, 38);
+            btnEnfermeirasNavegation.TabIndex = 1;
+            btnEnfermeirasNavegation.Text = "Enfermeiras";
+            btnEnfermeirasNavegation.UseVisualStyleBackColor = true;
+            btnEnfermeirasNavegation.Click += btnEnfermeirasNavegation_Click;
             // 
-            // button3
+            // btnMaeNavegation
             // 
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(19, 291);
-            button3.Name = "button3";
-            button3.Size = new Size(331, 41);
-            button3.TabIndex = 6;
-            button3.Text = "Mães";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnMaeNavegation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMaeNavegation.Location = new Point(19, 291);
+            btnMaeNavegation.Name = "btnMaeNavegation";
+            btnMaeNavegation.Size = new Size(331, 41);
+            btnMaeNavegation.TabIndex = 6;
+            btnMaeNavegation.Text = "Mães";
+            btnMaeNavegation.UseVisualStyleBackColor = true;
+            btnMaeNavegation.Click += btnMaeNavegation_Click;
             // 
-            // button4
+            // btnBebesNavegation
             // 
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(19, 248);
-            button4.Name = "button4";
-            button4.Size = new Size(331, 37);
-            button4.TabIndex = 7;
-            button4.Text = "Bebês";
-            button4.UseVisualStyleBackColor = true;
+            btnBebesNavegation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBebesNavegation.Location = new Point(19, 248);
+            btnBebesNavegation.Name = "btnBebesNavegation";
+            btnBebesNavegation.Size = new Size(331, 37);
+            btnBebesNavegation.TabIndex = 7;
+            btnBebesNavegation.Text = "Bebês";
+            btnBebesNavegation.UseVisualStyleBackColor = true;
+            btnBebesNavegation.Click += btnBebesNavegation_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.DarkSlateGray;
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(btnaltaNavegation);
+            panel1.Controls.Add(btnMedicosNavegation);
+            panel1.Controls.Add(btnBebesNavegation);
+            panel1.Controls.Add(btnMaeNavegation);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnEnfermeirasNavegation);
             panel1.Location = new Point(246, 50);
             panel1.Name = "panel1";
             panel1.Size = new Size(371, 399);
             panel1.TabIndex = 8;
             // 
-            // button5
+            // btnaltaNavegation
             // 
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(19, 156);
-            button5.Name = "button5";
-            button5.Size = new Size(331, 42);
-            button5.TabIndex = 8;
-            button5.Text = "Medicos";
-            button5.UseVisualStyleBackColor = true;
+            btnaltaNavegation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnaltaNavegation.Location = new Point(19, 338);
+            btnaltaNavegation.Name = "btnaltaNavegation";
+            btnaltaNavegation.Size = new Size(331, 41);
+            btnaltaNavegation.TabIndex = 9;
+            btnaltaNavegation.Text = "Altas";
+            btnaltaNavegation.UseVisualStyleBackColor = true;
+            btnaltaNavegation.Click += btnAltaNavegation_Click;
             // 
-            // button2
+            // btnMedicosNavegation
             // 
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(19, 338);
-            button2.Name = "button2";
-            button2.Size = new Size(331, 41);
-            button2.TabIndex = 9;
-            button2.Text = "Altas";
-            button2.UseVisualStyleBackColor = true;
+            btnMedicosNavegation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMedicosNavegation.Location = new Point(19, 156);
+            btnMedicosNavegation.Name = "btnMedicosNavegation";
+            btnMedicosNavegation.Size = new Size(331, 42);
+            btnMedicosNavegation.TabIndex = 8;
+            btnMedicosNavegation.Text = "Medicos";
+            btnMedicosNavegation.UseVisualStyleBackColor = true;
+            btnMedicosNavegation.Click += btnMedicosNavegation_Click;
             // 
             // TelaPrincipal
             // 
@@ -148,11 +151,11 @@
 
         private Label label1;
         private PictureBox pictureBox1;
-        private Button button1;
-        private Button button3;
-        private Button button4;
+        private Button btnEnfermeirasNavegation;
+        private Button btnMaeNavegation;
+        private Button btnBebesNavegation;
         private Panel panel1;
-        private Button button2;
-        private Button button5;
+        private Button btnaltaNavegation;
+        private Button btnMedicosNavegation;
     }
 }

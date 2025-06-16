@@ -28,8 +28,8 @@ Thumbs.db
 *.bak
 *.tmp
 *.cache
-*.config
 
-# Auto-generated files
-*.g.cs
+# Auto-generated files específicos (mais precisos)
 *.g.i.cs
+**/obj/**/*.g.cs
+**/obj/**/*.g.i.cs

@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dateTimePicker1 = new DateTimePicker();
+            dateTimePickerAlta = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            dateTimePickerHora = new DateTimePicker();
+            comboBoxMedico = new ComboBox();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtCpfMae = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
-            dataGridView1 = new DataGridView();
+            txtCodigoBebe = new TextBox();
+            dtgListAltas = new DataGridView();
             panel7 = new Panel();
-            button4 = new Button();
-            button3 = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnDeletarAlta = new Button();
+            btnAtualizarAlta = new Button();
+            btnLimparCampos = new Button();
+            btnSalvarAlta = new Button();
+            ((System.ComponentModel.ISupportInitialize)dtgListAltas).BeginInit();
             panel7.SuspendLayout();
             SuspendLayout();
             // 
-            // dateTimePicker1
+            // dateTimePickerAlta
             // 
-            dateTimePicker1.Location = new Point(12, 47);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 0;
+            dateTimePickerAlta.Location = new Point(12, 47);
+            dateTimePickerAlta.Name = "dateTimePickerAlta";
+            dateTimePickerAlta.Size = new Size(200, 23);
+            dateTimePickerAlta.TabIndex = 0;
             // 
             // label1
             // 
@@ -75,20 +75,20 @@
             label2.TabIndex = 2;
             label2.Text = "Hora da Alta";
             // 
-            // dateTimePicker2
+            // dateTimePickerHora
             // 
-            dateTimePicker2.Location = new Point(12, 114);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 3;
+            dateTimePickerHora.Location = new Point(12, 114);
+            dateTimePickerHora.Name = "dateTimePickerHora";
+            dateTimePickerHora.Size = new Size(200, 23);
+            dateTimePickerHora.TabIndex = 3;
             // 
-            // comboBox1
+            // comboBoxMedico
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 181);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(168, 23);
-            comboBox1.TabIndex = 4;
+            comboBoxMedico.FormattingEnabled = true;
+            comboBoxMedico.Location = new Point(12, 181);
+            comboBoxMedico.Name = "comboBoxMedico";
+            comboBoxMedico.Size = new Size(168, 23);
+            comboBoxMedico.TabIndex = 4;
             // 
             // label3
             // 
@@ -110,12 +110,12 @@
             label4.TabIndex = 6;
             label4.Text = "CPF da mãe";
             // 
-            // textBox1
+            // txtCpfMae
             // 
-            textBox1.Location = new Point(277, 46);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(145, 23);
-            textBox1.TabIndex = 7;
+            txtCpfMae.Location = new Point(277, 46);
+            txtCpfMae.Name = "txtCpfMae";
+            txtCpfMae.Size = new Size(145, 23);
+            txtCpfMae.TabIndex = 7;
             // 
             // label5
             // 
@@ -127,69 +127,69 @@
             label5.TabIndex = 8;
             label5.Text = "Codigo do Bebê";
             // 
-            // textBox2
+            // txtCodigoBebe
             // 
-            textBox2.Location = new Point(277, 114);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(145, 23);
-            textBox2.TabIndex = 9;
+            txtCodigoBebe.Location = new Point(277, 114);
+            txtCodigoBebe.Name = "txtCodigoBebe";
+            txtCodigoBebe.Size = new Size(145, 23);
+            txtCodigoBebe.TabIndex = 9;
             // 
-            // dataGridView1
+            // dtgListAltas
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 274);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(538, 150);
-            dataGridView1.TabIndex = 10;
+            dtgListAltas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgListAltas.Location = new Point(12, 274);
+            dtgListAltas.Name = "dtgListAltas";
+            dtgListAltas.Size = new Size(591, 150);
+            dtgListAltas.TabIndex = 10;
             // 
             // panel7
             // 
             panel7.BackColor = SystemColors.ScrollBar;
-            panel7.Controls.Add(button4);
-            panel7.Controls.Add(button3);
-            panel7.Location = new Point(609, 261);
+            panel7.Controls.Add(btnDeletarAlta);
+            panel7.Controls.Add(btnAtualizarAlta);
+            panel7.Location = new Point(635, 261);
             panel7.Name = "panel7";
             panel7.Size = new Size(143, 177);
             panel7.TabIndex = 25;
             // 
-            // button4
+            // btnDeletarAlta
             // 
-            button4.Location = new Point(32, 98);
-            button4.Name = "button4";
-            button4.Size = new Size(87, 49);
-            button4.TabIndex = 1;
-            button4.Text = "Deletar";
-            button4.UseVisualStyleBackColor = true;
+            btnDeletarAlta.Location = new Point(32, 98);
+            btnDeletarAlta.Name = "btnDeletarAlta";
+            btnDeletarAlta.Size = new Size(87, 49);
+            btnDeletarAlta.TabIndex = 1;
+            btnDeletarAlta.Text = "Deletar";
+            btnDeletarAlta.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAtualizarAlta
             // 
-            button3.BackColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(32, 30);
-            button3.Name = "button3";
-            button3.Size = new Size(87, 49);
-            button3.TabIndex = 0;
-            button3.Text = "Atualizar";
-            button3.UseVisualStyleBackColor = false;
+            btnAtualizarAlta.BackColor = SystemColors.ButtonHighlight;
+            btnAtualizarAlta.Location = new Point(32, 30);
+            btnAtualizarAlta.Name = "btnAtualizarAlta";
+            btnAtualizarAlta.Size = new Size(87, 49);
+            btnAtualizarAlta.TabIndex = 0;
+            btnAtualizarAlta.Text = "Atualizar";
+            btnAtualizarAlta.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnLimparCampos
             // 
-            button1.Location = new Point(433, 193);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 50);
-            button1.TabIndex = 30;
-            button1.Text = "Limpar";
-            button1.UseVisualStyleBackColor = true;
+            btnLimparCampos.Location = new Point(433, 193);
+            btnLimparCampos.Name = "btnLimparCampos";
+            btnLimparCampos.Size = new Size(95, 50);
+            btnLimparCampos.TabIndex = 30;
+            btnLimparCampos.Text = "Limpar";
+            btnLimparCampos.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSalvarAlta
             // 
-            button2.BackColor = SystemColors.ActiveCaptionText;
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(277, 191);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 52);
-            button2.TabIndex = 29;
-            button2.Text = "Gerar Relatorio";
-            button2.UseVisualStyleBackColor = false;
+            btnSalvarAlta.BackColor = SystemColors.ActiveCaptionText;
+            btnSalvarAlta.ForeColor = SystemColors.ControlLightLight;
+            btnSalvarAlta.Location = new Point(277, 191);
+            btnSalvarAlta.Name = "btnSalvarAlta";
+            btnSalvarAlta.Size = new Size(135, 52);
+            btnSalvarAlta.TabIndex = 29;
+            btnSalvarAlta.Text = "Gerar Alta";
+            btnSalvarAlta.UseVisualStyleBackColor = false;
             // 
             // FormAlta
             // 
@@ -197,23 +197,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Controls.Add(button2);
+            Controls.Add(btnLimparCampos);
+            Controls.Add(btnSalvarAlta);
             Controls.Add(panel7);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox2);
+            Controls.Add(dtgListAltas);
+            Controls.Add(txtCodigoBebe);
             Controls.Add(label5);
-            Controls.Add(textBox1);
+            Controls.Add(txtCpfMae);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker2);
+            Controls.Add(comboBoxMedico);
+            Controls.Add(dateTimePickerHora);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dateTimePickerAlta);
             Name = "FormAlta";
             Text = "FormAlta";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgListAltas).EndInit();
             panel7.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -221,21 +221,21 @@
 
         #endregion
 
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerAlta;
         private Label label1;
         private Label label2;
-        private DateTimePicker dateTimePicker2;
-        private ComboBox comboBox1;
+        private DateTimePicker dateTimePickerHora;
+        private ComboBox comboBoxMedico;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtCpfMae;
         private Label label5;
-        private TextBox textBox2;
-        private DataGridView dataGridView1;
+        private TextBox txtCodigoBebe;
+        private DataGridView dtgListAltas;
         private Panel panel7;
-        private Button button4;
-        private Button button3;
-        private Button button1;
-        private Button button2;
+        private Button btnDeletarAlta;
+        private Button btnAtualizarAlta;
+        private Button btnLimparCampos;
+        private Button btnSalvarAlta;
     }
 }

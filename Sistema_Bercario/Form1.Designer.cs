@@ -28,130 +28,144 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label4 = new Label();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.txtNomeLogin = new System.Windows.Forms.TextBox();
+            this.txtSenhaLogin = new System.Windows.Forms.TextBox();
+            this.btnEntrarSistema = new System.Windows.Forms.Button();
+            this.btnIrCadastro = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
-            // button1
+            // txtNomeLogin
             // 
-            button1.BackColor = Color.FromArgb(0, 192, 192);
-            button1.Location = new Point(302, 359);
-            button1.Name = "button1";
-            button1.Size = new Size(188, 43);
-            button1.TabIndex = 0;
-            button1.Text = "ENTRAR";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.txtNomeLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNomeLogin.Location = new System.Drawing.Point(150, 120);
+            this.txtNomeLogin.MaxLength = 50;
+            this.txtNomeLogin.Name = "txtNomeLogin";
+            this.txtNomeLogin.Size = new System.Drawing.Size(250, 26);
+            this.txtNomeLogin.TabIndex = 0;
+            this.txtNomeLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeLogin_KeyDown);
             // 
-            // pictureBox1
+            // txtSenhaLogin
             // 
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(302, 21);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(188, 153);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            this.txtSenhaLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSenhaLogin.Location = new System.Drawing.Point(150, 170);
+            this.txtSenhaLogin.MaxLength = 255;
+            this.txtSenhaLogin.Name = "txtSenhaLogin";
+            this.txtSenhaLogin.PasswordChar = '*';
+            this.txtSenhaLogin.Size = new System.Drawing.Size(250, 26);
+            this.txtSenhaLogin.TabIndex = 1;
+            this.txtSenhaLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenhaLogin_KeyDown);
             // 
-            // label1
+            // btnEntrarSistema
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(368, 209);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 30);
-            label1.TabIndex = 2;
-            label1.Text = "Login";
+            this.btnEntrarSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnEntrarSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrarSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEntrarSistema.ForeColor = System.Drawing.Color.White;
+            this.btnEntrarSistema.Location = new System.Drawing.Point(150, 230);
+            this.btnEntrarSistema.Name = "btnEntrarSistema";
+            this.btnEntrarSistema.Size = new System.Drawing.Size(250, 40);
+            this.btnEntrarSistema.TabIndex = 2;
+            this.btnEntrarSistema.Text = "Entrar";
+            this.btnEntrarSistema.UseVisualStyleBackColor = false;
+            this.btnEntrarSistema.Click += new System.EventHandler(this.btnEntrarSistema_Click);
             // 
-            // label2
+            // btnIrCadastro
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(225, 177);
-            label2.Name = "label2";
-            label2.Size = new Size(374, 32);
-            label2.TabIndex = 3;
-            label2.Text = "Seja Bem-Vindo ao Berçario Feliz";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(313, 248);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(165, 33);
-            textBox1.TabIndex = 4;
-            textBox1.Text = "Nome";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(313, 306);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(165, 33);
-            textBox2.TabIndex = 5;
-            textBox2.Text = "Senha";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.ControlLightLight;
-            label4.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(369, 312);
-            label4.Name = "label4";
-            label4.Size = new Size(0, 21);
-            label4.TabIndex = 7;
+            this.btnIrCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.btnIrCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIrCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIrCadastro.ForeColor = System.Drawing.Color.White;
+            this.btnIrCadastro.Location = new System.Drawing.Point(150, 290);
+            this.btnIrCadastro.Name = "btnIrCadastro";
+            this.btnIrCadastro.Size = new System.Drawing.Size(250, 35);
+            this.btnIrCadastro.TabIndex = 3;
+            this.btnIrCadastro.Text = "Cadastrar Novo Administrador";
+            this.btnIrCadastro.UseVisualStyleBackColor = false;
+            this.btnIrCadastro.Click += new System.EventHandler(this.btnIrCadastro_Click);
             // 
             // button2
             // 
-            button2.Location = new Point(660, 359);
-            button2.Name = "button2";
-            button2.Size = new Size(102, 54);
-            button2.TabIndex = 8;
-            button2.Text = "Testar Conexão";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(150, 350);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Testar Conexão";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(150, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(250, 29);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Sistema do Berçário";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(150, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Usuário";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(150, 150);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 17);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Senha";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(0, 64, 64);
-            ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(label4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Controls.Add(button1);
-            Name = "Form1";
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(550, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnIrCadastro);
+            this.Controls.Add(this.btnEntrarSistema);
+            this.Controls.Add(this.txtSenhaLogin);
+            this.Controls.Add(this.txtNomeLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login - Sistema Berçário";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private Button button1;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label4;
-        private Button button2;
+        private System.Windows.Forms.TextBox txtNomeLogin;
+        private System.Windows.Forms.TextBox txtSenhaLogin;
+        private System.Windows.Forms.Button btnEntrarSistema;
+        private System.Windows.Forms.Button btnIrCadastro;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
